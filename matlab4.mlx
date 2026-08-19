@@ -1,0 +1,265 @@
+x=-5:0.01:1.5;
+y=x.^2;
+plot(x,y,'color','y')
+grid on
+hold on
+pause(1)
+%shifting 4 upward
+y1=x.^2+4;
+plot(x,y1,'color','r')
+pause(1)
+%shifting 4 downward
+y2=x.^2-4;
+plot(x,y2,'Color','g')
+pause(1)
+%shifting 1 right
+y3=(x-1).^2;
+plot(x,y3,'Color','b')
+%hifting 2 left and 4 up
+pause(1)
+y4=(x+2).^2+4;
+plot(x,y4,'Color','black')
+%shifting 3 right and 5 down
+pause(1)
+y5=(x-3).^2-5;
+plot(x,y5,'Color','m')
+hold off
+1
+grid on
+2
+x=0:0.00001:10;
+plot(x,sqrt(x),'Color','y')
+hold on
+t=-10:0.001:0;
+plot(t,sqrt(-t),'Color','r')
+hold on
+y1=-sqrt(x);
+plot(x,y1,'color','g')
+hold on
+y2=(3*sqrt(x));
+plot(x,y2,'Color','b')
+hold on
+y3=(1/3)*sqrt(x);
+plot(x,y3,'color','black')
+hold on
+y4=sqrt(x/3);
+plot(x,y4,'Color','m')
+hold on
+y5=sqrt(3*x);
+plot(x,y5,'Color','c')
+hold off
+vertical scale
+syms f(x)
+3
+f(x) = x.^2;
+figure
+fplot(f(x), [-4 4], 'Color','y')
+grid on
+hold on
+fplot((1/2)*f(x), [-4 4], 'Color','m')
+hold on
+fplot((2)*f(x), [-4 4], 'Color','b')
+hold off
+axis([-6 6 0 5])
+axis equal;
+title('Vertical scaling')
+horizontal scale
+syms f(x)
+f(x)=x.^2;
+figure
+grid on
+hold on
+fplot(f(x), [-4 4],'Color','y')
+fplot(f(x*2),[-4 4],'Color','r')
+fplot(f(x/2),[-4 4],'Color','g')
+hold off
+title('horizontal scale')
+4
+animate AB
+points on AB are x = (1-lamda)A + lamda*B
+and lamda is from 0 to 1
+A=[1;1];B=[4;5];
+for lamda=0:0.05:1
+x=(1-lamda)*A + lamda*B;
+plot(x(1,1),x(2,1),'b.','MarkerSize',18)
+%plots a single point
+pause(0.1)
+hold on
+axis('equal')
+plot([-1 5],[0 0])
+plot([0,0],[-1,5])
+drawnow
+end
+hold off
+5
+2 line segments
+XO=[0;10];XM=[5;0];XE=[20;-5];
+for lamda=0:0.05:1
+x=(1-lamda)*XO + lamda*XM;
+plot(x(1,1),x(2,1),'b.','MarkerSize',18)
+%plots a single point
+pause(0.1)
+hold on
+axis('equal')
+plot([0 20],[0 0])
+plot([0,0],[-5,10])
+drawnow
+end
+for lamda=0:0.05:1
+    x=(1-lamda)*XE + lamda*XM;
+    plot(x(1,1),x(2,1),'b.','MarkerSize',18)
+pause(0.1)
+hold on
+drawnow
+end
+hold off
+6
+Excercise
+Q1
+syms f(x)
+f(x)=sqrt(1-(x-1).^2);
+figure
+hold on
+x=0:0.01:2;
+%(a)
+plot(x,f(x))
+%(b)
+plot(x,f(x)+1)
+%(c)
+plot(x,f(x)-4)
+%(d)
+plot(x,f(x-3))
+Warning: Imaginary parts of complex X and/or Y arguments ignored.
+7
+%(e)
+plot(x,f(x+5))
+Warning: Imaginary parts of complex X and/or Y arguments ignored.
+%(f)
+plot(x,3*f(x))
+%(g)
+plot(x,f(x)/2)
+%(h)
+plot(x,f(2*x))
+Warning: Imaginary parts of complex X and/or Y arguments ignored.
+%(i)
+plot(x,f(x/4))
+%(j)
+plot(x,-f(x))
+%(k)
+plot(x,f(-x))
+Warning: Imaginary parts of complex X and/or Y arguments ignored.
+hold off
+%(a)
+plot(x,f(x))
+%(b)
+8
+plot(x,f(x)+1)
+%(c)
+plot(x,f(x)-4)
+9
+%(d)
+fplot(x,f(x-3))
+%(e)
+fplot(x,f(x+5))
+%(f)
+plot(x,3*f(x))
+%(g)
+plot(x,f(x)/2)
+%(h)
+fplot(x,f(2*x))
+%(i)
+plot(x,f(x/4))
+%(j)
+plot(x,-f(x))
+%(k)
+fplot(x,f(-x))
+Q2
+syms f(x)
+f(x)=x.^2;
+figure
+x=-2:0.01:2;
+hold on
+plot(x,f(x))
+10
+%(a)
+plot(x,f(x-2))
+%(b)
+plot(x,f(x+1))
+%(c)
+plot(x,f(x)+3)
+%(d)
+plot(x,f(x)-4)
+%(e)
+plot(x,-f(x))
+%(f) plot all the above resultant curves?
+%plot(
+hold off
+Q3
+x=-1:0.01:1,y=-1:0.01:1;
+x = 1×201
+   -1.0000   -0.9900   -0.9800   -0.9700   -0.9600   -0.9500   -0.9400   -0.9300
+theta = linspace(0,pi,1000);
+r=1;
+x=r*cos(theta);
+y=r*sin(theta);
+%(a)
+plot(x,y);
+%(b)
+plot(x+2,y)
+%(c)
+plot(x,y+3)
+11
+Q4
+A = [25; -10];
+B = [1; 15];
+lambda = 0:0.1:1;
+X = A*(1-lambda) + B*lambda;
+plot(X(1,:), X(2,:), 'b.', 'MarkerSize', 18);
+pause(0.05)
+hold on
+hold off
+12
+Q5
+% S
+A1 = [3;5];    B1 = [0;5];
+A2 = [0;5];    B2 = [0;3];
+A3 = [0;3];    B3 = [3;3];
+A4 = [3;3];    B4 = [3;1];
+A5 = [3;1];    B5 = [0;1];
+% A
+A6 = [4;1];    B6 = [5.5;5];
+A7 = [5.5;5];  B7 = [7;1];
+A8 = [4.75;3]; B8 = [6.25;3];
+% I
+A9  = [8;5];   B9  = [11;5];
+A10 = [9.5;5]; B10 = [9.5;1];
+A11 = [8;1];   B11 = [11;1];
+for lamda = 0:0.05:1
+    x1  = (1-lamda)*A1  + lamda*B1;
+    x2  = (1-lamda)*A2  + lamda*B2;
+    x3  = (1-lamda)*A3  + lamda*B3;
+    x4  = (1-lamda)*A4  + lamda*B4;
+13
+    x5  = (1-lamda)*A5  + lamda*B5;
+    x6  = (1-lamda)*A6  + lamda*B6;
+    x7  = (1-lamda)*A7  + lamda*B7;
+    x8  = (1-lamda)*A8  + lamda*B8;
+    x9  = (1-lamda)*A9  + lamda*B9;
+    x10 = (1-lamda)*A10 + lamda*B10;
+    x11 = (1-lamda)*A11 + lamda*B11;
+    plot(x1(1),x1(2),'b.','MarkerSize',18)
+    hold on
+    plot(x2(1),x2(2),'b.','MarkerSize',18)
+    plot(x3(1),x3(2),'b.','MarkerSize',18)
+    plot(x4(1),x4(2),'b.','MarkerSize',18)
+    plot(x5(1),x5(2),'b.','MarkerSize',18)
+    plot(x6(1),x6(2),'b.','MarkerSize',18)
+    plot(x7(1),x7(2),'b.','MarkerSize',18)
+    plot(x8(1),x8(2),'b.','MarkerSize',18)
+    plot(x9(1),x9(2),'b.','MarkerSize',18)
+    plot(x10(1),x10(2),'b.','MarkerSize',18)
+    plot(x11(1),x11(2),'b.','MarkerSize',18)
+    pause(0.1)
+    drawnow
+end
+hold off
