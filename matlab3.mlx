@@ -1,0 +1,173 @@
+x = -10:0.01:10
+
+Plotting a graph
+x = linspace(-10,10,6700); y=x.^2; plot(x,y)
+
+Diff way to write the same graph
+t=-10:0.01:10; plot(t,t.^2)
+
+Circle
+t=0:0.001:2*pi; plot(cos(t),sin(t))
+
+Stem plot
+x=-10:1:10; y=x.^2; stem(x,y)
+
+Easy plot
+ezplot('x.^2',[-10,10])
+
+Line segment plot([a1,a2],[b1,b2])
+plot([1,2],[65,66])
+plot([0,10],[0,0])
+plot([0,0],[-5,5])
+
+script file cicle
+theta = linspace(0,2*pi,100)
+x=cos(theta)
+y=sin(theta)
+plot(x,y)
+axis('equal')
+xlabel('x')
+ylabel('y')
+title('circle of unit radius at origin')
+
+ hold on, axis & colors
+x=-4:0.0001:4;
+y=x;
+plot(x,y,'color','red')
+hold on
+
+y=x.^2; plot(x,y,'LineStyle','--')
+hold on
+
+plot(x,sin(x),'Color','green','LineStyle','-.')
+axis([-6 7 -3 4])
+                  ^x-axis  ^y-axis
+
+ hold of and helix
+hold off
+t=-4*pi:pi/54:4*pi
+plot3(sin(t),cos(t),t)
+
+segmented functions
+x=linspace(0,5,500)
+y1=(x<=2).*(2-x)
+y2=(x>2).*(x-2)
+y=y1+y2
+plot(x,y)
+
+
+
+
+
+Practise Questions
+
+Q1
+x=-2*pi:0.1:2*pi;
+y=sin(x);
+plot(x,y)
+
+Q2
+x=-2:0.1:2;
+y=tan(x);
+plot(x,y)
+
+Q3
+parametric eq,
+x = h+rcos(theta)
+y = k+rsin(theta)
+(h,k) are the centers and r is radius
+x=0:0.1:2*pi;
+x1=1+5*sin(x);
+y1=1+5*cos(x);
+plot(x1,y1)
+
+Q4
+t=0:0.1:2*pi;
+x=3+3*cos(t);
+y=5+sin(t);
+plot(x,y)
+axis([-4 10 0 10])
+
+Q5
+for full quadrant 
+t=0:0.1:2*pi
+for 2nd quadrant
+t=1/2*pi:0.1:pi
+x=5*cos(t)
+y=3*sin(t)
+plot(x,y)
+
+Q6
+x=-4*pi:0.1:4*pi;
+y1=sin(x);
+plot(x,y1,'Color','blue')
+hold on
+y2=cos(x);
+plot(x,y2,'Color','red')
+hold off
+
+Q7
+x=0:0.1:10;
+y1 = 6 - x;
+y2 = 2*x - 9;
+plot(x,y1)
+hold on
+plot(x,y2)
+hold off
+
+Q8
+do using formula
+mesh(x-y,5+y,u-i)............
+X=-10:1:10
+Y=-10:0.1:10
+[x,y]=meshgrid([X Y])
+mesh(x,y,6-x-y)
+hold on 
+mesh(x,y,5-2*x+y)
+hold on
+mesh(x,y,(-8+2*y+3*x)/5)
+hold off
+
+Q9
+x=-100:1:100;
+plot3(x,x,x.^2)
+
+Q10
+x=-100:0.1:100;
+plot3(x,sin(x),x.^2)
+
+Q11
+t=-4*pi:0.01:4*pi;
+plot3(5*cos(t),3*sin(t),t+1,'Color','blue')
+hold on
+plot3(cos(t),sin(t),t,'Color','red')
+hold off
+
+Q12
+use & when you need two functions in one bracket
+x=linspace(3,0,500);
+y1=(x<=1).*(x);
+y2=(x>1 & x<=2).*(1);
+y3=(x>2 & x<=3).*(3-x);
+y=y1+y2+y3;
+plot(x,y)
+
+Q13
+x=linspace(-10,10,1000);
+y1=(-10<=x & -1>=x).*(1);
+y2=(-1<x & x<=1).*(-x);
+y3=(1<=x & x<=10).*(x-2);
+y=y1+y2+y3;
+plot(x,y)
+
+Q14
+x=linspace(-3*pi/2,3*pi/2,10000);
+y1=(-3/2*pi<=x & x<=0).*(sin(x));
+y2=(0<x & x<=1/2*pi).*(2*x);
+y3=(1/2*pi<x & x<=3/2*pi).*(pi-cos(x));
+plot(x,y1+y2+y3);
+
+Q15
+birthday x=3, y=1, z=9
+x=3; y=1; z=9;
+plot([x y],[y z])
